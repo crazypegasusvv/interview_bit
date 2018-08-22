@@ -60,14 +60,11 @@ public class Trie
         HashSet<String> st=new HashSet<String>();
         for(String s:words) st.add(s);
         List<IntPair> map = new ArrayList<IntPair>();
-        int mn=Integer.MAX_VALUE,mx=Integer.MIN_VALUE;
         for(int i=0;i<B.size();i++)
         {
             String word[]=B.get(i).split("_");
             int cnt=0;
             for(String s:word) if(st.contains(s)) cnt++;
-            if(mn>cnt) mn=cnt;
-            if(mx<cnt) mx=cnt;
             map.add(new IntPair(cnt,i));
         }
         Collections.sort(map,new Comparator<IntPair>()
